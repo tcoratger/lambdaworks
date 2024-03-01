@@ -1,11 +1,12 @@
 use core::{
     fmt::Display,
-    ops::{Add, BitAnd, Shr},
+    ops::{Add, BitAnd, Shr, ShrAssign},
 };
 
 pub trait IsUnsignedInteger:
     Shr<usize, Output = Self>
     + BitAnd<Output = Self>
+    + ShrAssign<usize>
     + Eq
     + Ord
     + From<u16>
